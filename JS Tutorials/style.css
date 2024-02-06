@@ -1,0 +1,16 @@
+.div {
+    display: inline;
+    border: 2px solid black;
+    border-radius: 36%;
+    background-color: blue;
+}
+
+.ip1 , .ip2 {
+    font-size: larger;
+    border-radius: 100%;
+}
+
+.ip1 {
+    visibility: hidden;
+}
+

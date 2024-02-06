@@ -1,0 +1,30 @@
+body {
+    text-align: center;
+}
+
+div {
+    height: 100px;
+    width:  100px;
+    background-color: cadetblue;
+    position: absolute;
+    left: 500px;
+}
+
+@keyframes colorAnimate {
+    from { background-color:cadetblue }
+    to { background-color: blueviolet;}
+}
+
+div:hover {
+        animation-name: colorAnimate;
+        animation-duration: 5s;
+        animation-timing-function: ease-in;
+        animation-delay: 0s;
+        animation-iteration-count:5;  /*how many times*/
+        /* animation-direction:  normal,reverse.alternate,reverse-alternate  */
+}
+
+/* animation shorthand ; name duration timing-function delay iteration-count direction  */
+
+/* bich wali stage me animation me kuch change lana hai to hum percentage use kr skte hai  */
+/* example; 0% {} 50%{} 100%{}  */

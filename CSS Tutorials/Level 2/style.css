@@ -1,0 +1,33 @@
+div {
+    height: 100px;
+    width: 100px;
+    background-color: pink;
+}
+
+         /* border properties; border-width , border-style , border-color  */
+
+div,h1 {
+    border-width: 4px;
+    border-style: double;
+    border-color: red;
+    text-align: center;
+    
+    padding-left: 2px;
+    padding-top: 2px;
+}
+
+
+    /* center mtlb document ke center me nahi jata, box ke center me jata  */
+    /* shorthand way; border: 2px double black  */
+
+h1 {
+    border-radius: 50px;  or in%
+}
+    /* to change shape of border we use border radius  */
+    /* for creating circle set border radius of a square as 50%  */
+    /* padding doesnt contain content  */
+    /* shorthandway; padding:top right bottom left (clockwise) and same applies for margin  */
+
+
+         
+

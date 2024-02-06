@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#box1 {
+    background-color: red;
+    width: 100px;
+    height: 100px;
+    margin: 50px;
+    border-radius: 50%;
+}
+
+#box2 {
+    background-color: green;
+    width: 100px;
+    height: 100px;
+    margin: 50px;
+    border-radius: 50%;
+}
+
+#box3 {
+    background-color: yellow;
+    width: 100px;
+    height: 100px;
+    margin: 50px;
+    border-radius: 50%;
+
+}
+
+#main {
+    display: inline;
+    border-style: solid;
+    border-color: black;
+}

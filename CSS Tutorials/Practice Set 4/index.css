@@ -1,0 +1,9 @@
+div{
+    height: 25vh;
+    width: 25vw;
+    background-image: url("/bg.jpeg");
+    background-size: cover;
+    position: fixed;
+    right: 0%;
+    top: 0%;
+}

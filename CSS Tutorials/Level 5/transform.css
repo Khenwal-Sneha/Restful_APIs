@@ -1,0 +1,30 @@
+div {
+    height: 200px;
+    width: 300px;
+    border: 2px solid;
+    background-color: burlywood;
+    /* transform property applies on whole element both parent and child  */
+    transform: rotate(0deg);
+    position: absolute;
+    left: 200px;
+
+    transform: scale(0.5,1);
+}
+
+body {
+    text-align: center;
+}
+
+div:hover {
+    transform: scale(2);
+    transform: rotate(180deg);
+    transition-duration: 2s;
+    transform: translate(200px);   /*used to move an element*/
+    transform: skew(45deg);
+}
+
+
+
+
+
+
