@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Table Filter</title>
+</head>
+<body style="margin: 20px;">
+    <h2>Our Users are:</h2>
+    <form action="/newuser" method="get"><button style="margin-bottom: 10px ;">Make your account</button></form>
+    <input type="text" id="input" placeholder="Search by username">
+    <table id="data" border="black">
+        <tr>
+            <th>Id</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th colspan="2">Actions</th>
+        </tr>
+        <% users.forEach(user => { %>
+            <tr>
+                <td><%= user.id %></td>
+                <td><%= user.name %></td>
+                <td><%= user.email %></td>
+                <td>
+                    <form action="http://localhost:8004/user/<%= user.id %>/edit" method="get">
+                        <button>Edit Username</button>
+                    </form>
+                </td>
+                <td>
+                    <form action="http://localhost:8004/user/<%= user.id %>/delete" method="get">
+                        <button>Delete Account</button>
+                    </form>
+                </td>
+            </tr>
+        <% }) %>
+    </table>
+
+    <script>
+        // Fetch the users data passed from the server-side EJS
+        const users = <%- JSON.stringify(users) %>;
+
+        // Get the input and table elements
+        const input = document.getElementById('input');
+        const data = document.getElementById('data');
+
+        // Add an event listener to filter the table based on input
+        input.addEventListener('input', (event) => {
+            const searchTerm = event.target.value.toLowerCase();
+
+            // Clear previous table rows except the header
+            data.innerHTML = `
+                <tr>
+                    <th>Id</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Actions</th>
+                </tr>
+            `;
+
+            // Filter users and update table
+            users.filter(user => user.name.toLowerCase().includes(searchTerm))
+                .forEach(user => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${user.id}</td>
+                        <td>${user.name}</td>
+                        <td>${user.email}</td>
+                        <td>
+                            <form action="http://localhost:8004/user/${user.id}/edit" method="get">
+                                <button>Edit Username</button>
+                            </form>
+                        </td>
+                        <td>
+                    <form action="http://localhost:8004/user/${user.id}/delete" method="get">
+                        <button>Delete Account</button>
+                    </form>
+                </td>
+                    `;
+                    data.appendChild(row);
+                });
+        });
+    </script>
+</body>
+</html>
