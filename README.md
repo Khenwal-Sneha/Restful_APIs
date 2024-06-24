@@ -1,5 +1,5 @@
 # Restful_APIs
-RESTful API Project Welcome to the RESTful API Project repository! This project serves as a fundamental example of building a RESTful API using Node.js, Express.js, and MySQL. It is designed to provide a clear and practical introduction to the principles and practices of RESTful API development.
+RESTful API Project Welcome to the RESTful API Project repository! This project serves as a fundamental example of building a RESTful API using Node.js, Express.js, MySQL and MongoDb. It is designed to provide a clear and practical introduction to the principles and practices of RESTful API development.
 
 Overview
 This project demonstrates how to create a simple RESTful API for managing a collection of users. It covers essential CRUD (Create, Read, Update, Delete) operations and showcases best practices for building scalable and maintainable APIs.
