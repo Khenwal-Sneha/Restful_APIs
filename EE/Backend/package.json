@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.19.2"
+  },
+  "name": "ee",
+  "version": "1.0.0",
+  "description": "It is a website containing info about all EE projects of SEM II 2023-24",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sneha Khenwal",
+  "license": "ISC"
+}

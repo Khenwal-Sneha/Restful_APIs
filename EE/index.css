@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+body {
+    background-color: rgb(137, 132, 132);
+}
+
+.container1 {
+    height: 20vh;
+    background-color: black;
+    color: white;
+}
+
+ul {
+    height: 20vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
+    align-items: center;
+    align-content: center;
+}
+
+nav1 {
+    padding: 2%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    list-style: none;
+}
+
+nav2 {
+    padding: 2%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    margin: 0px 1rem 4% 1rem;
+    font-family: cursive;
+    font-weight: 200;
+    font-size: 1.2rem;
+    box-shadow: 5px 5px 5px rgb(232, 146, 232);
+}
+
+nav2 a:hover{
+    font-weight: 600;
+    transform: scale(1.2);
+}
+
+.heading {
+    font-size: 2rem;
+    font-style: normal;
+    font-family: cursive;
+    padding-top: 10%;
+    color: violet;
+}
+
+.heading:hover {
+    transform: scale(1.1);
+}
+
+/* body */
+.container2 , .container3 , .container{
+    margin: 2rem;
+    padding: 5%;
+    color: white;    
+    background-color: rgb(50, 48, 48);
+    border-radius: 1.5%;
+    font-family: cursive;
+    box-shadow: 20px 20px 20px black;
+}
+
+
+ h2 {
+    color: rgb(204, 134, 204);
+    margin: 0px 0px 2% 0px;
+}
+
+ h2:hover {
+    color: violet;
+}
+
+/* making website responsive */
+@media screen and (max-width: 525px) {
+    .heading 
+    {
+        font-size: 1rem;
+    }
+    nav1 li img {
+        width: 100px;
+    }
+}
