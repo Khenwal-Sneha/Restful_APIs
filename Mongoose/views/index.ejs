@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Whatsapp</title>
+</head>
+<style>
+    body {
+    margin: 10px;
+    padding: 10px;
+}
+
+h2 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+button{
+    background-color: rgb(175, 105, 175);
+    height: 2rem;
+    width: 5rem;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px black;
+}
+
+.delete {
+    margin: 5px;
+    background-color: red;
+    color: white;
+    box-shadow: 0px 0px 10px black;
+}
+
+.edit {
+    margin: 5px;
+    background-color: green;
+    color: white;
+    box-shadow: 0px 0px 10px black;
+}
+
+.chat {
+    margin: 20px;
+    box-shadow: 0px 0px 15px black;
+    border-radius: 15px;
+    padding: 2rem;
+    background-color: rgb(173, 216, 230,0.3);
+}
+
+.msg {
+    box-shadow: 0px 0px 15px black;
+    border-radius: 5px;   
+    padding: 1rem;
+    color: antiquewhite;
+    background-color: rgb(94, 94, 215);
+}
+
+.btns {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+button:hover {
+    background-color: rgb(160, 7, 160);
+    color: white;
+    box-shadow: 0px 0px 20px black;
+}
+
+.delete:hover {
+    background-color: rgb(188, 3, 3);
+}
+
+.edit:hover{
+    background-color: rgb(3, 59, 3);
+}
+
+.chats {
+    display: flex;
+    flex-direction: column-reverse;
+}
+</style>
+<body>
+    <h2>All Chats</h2>
+    <input type="text" placeholder="Search by Name....">
+    <form action="/chat/new" method="get"><h4><button>New Chat</button></h4></form>
+    <div class="chats">
+    <% for(chat of chats) { %>
+         <div class="chat">
+            <p>From:<%= chat.from %></p>
+            <p>To:<%= chat.to %></p>
+            <div class="msg">
+                <p><b>Message: </b><%= chat.message %></p>
+            </div>
+            <p>Date & Time:<%= chat.created_at %></p>
+            <div class="btns">
+                <form action="/chats/<%= chat._id %>?_method=DELETE" method="post"><button class="delete">Delete</button></form>
+                <form action="/chat/<%= chat._id %>"><button class="edit">Edit</button></form>
+            </div>
+         </div>
+    <% } %>
+    </div>
+
+    <script>
+        const input = document.querySelector("input");
+        const box = document.querySelector(".chats");
+
+        // Server-side rendering: Pass chat data to the client side
+        const chats = <%- JSON.stringify(chats) %>;
+
+        input.addEventListener("input", () => {
+            const search = input.value.toLowerCase();
+            box.innerHTML = ''; // Clear the box before adding new results
+
+            chats.forEach(chat => {
+                const to = chat.to.toLowerCase();
+                const from = chat.from.toLowerCase();
+                if (to.indexOf(search) !== -1 || from.indexOf(search) !== -1) {
+                    box.innerHTML += `
+                        <div class="chat">
+                            <p>From: ${chat.from}</p>
+                            <p>To: ${chat.to}</p>
+                            <div class="msg">
+                                <p><b>Message: </b>${chat.message}</p>
+                            </div>
+                            <p>Date & Time: ${chat.created_at}</p>
+                            <div class="btns">
+                                <form action="/chats/${chat._id}?_method=DELETE" method="post">
+                                    <button class="delete">Delete</button>
+                                </form>
+                                <form action="/chat/${chat._id}">
+                                    <button class="edit">Edit</button>
+                                </form>
+                            </div>
+                        </div>
+                    `;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

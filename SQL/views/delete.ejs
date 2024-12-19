@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete your account</title>
+</head>
+<body>
+    <h1>Give your confirmation</h1>
+    <h4>Your Username: <%= user["name"] %></h4>
+    <form action="http://localhost:8004/user/<%= user.id %>?_method=DELETE" method="post" style="display: flex; flex-direction: column; width: 65vw;">
+        <input type="password" placeholder="enter password to delete" name="password" style="margin: 20px;">
+        <div style="margin: 20px;">
+        <input type="checkbox" name="permi">
+        <label for="permi">I want to delete my account</label>
+        </div>
+        <button style="margin: 20px;">Delete</button>
+    </form>
+</body>
+</html>

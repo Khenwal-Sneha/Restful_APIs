@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Chat</title>
+</head>
+<style>
+       body { margin: 10px;
+    padding: 10px;
+}
+
+h2 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+button{
+    background-color: rgb(175, 105, 175);
+    height: 2rem;
+    width: 5rem;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px black;
+    margin: 20px;
+}
+    
+button:hover{background-color: rgb(160, 7, 160);
+    color: white;
+    box-shadow: 0px 0px 20px black;}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    margin: 10px;
+}
+</style>
+<body>
+    <h2>New Message</h2>
+    <form  action="/chats" method="post">
+        <label for="from">Enter your name:</label>
+        <input type="text" name="from">
+        <label for="to">Enter name of the person:</label>
+        <input type="text" name="to">
+        <label for="msg">Enter Message</label>
+        <input type="text" name="msg">
+        <button>Save</button>
+    </form>
+</body>
+</html>
